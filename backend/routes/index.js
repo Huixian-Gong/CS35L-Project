@@ -64,6 +64,16 @@ router.post('/new_post', function(req,res,next){
   });
 });
 
+router.post('/say_hi', function(req,res,next){
+  var msg = req.body.msg;
+  console.log(msg)
+  // var sql = 'insert into post_time (cont) values(?);';
+  // con.query(sql,[content], function(err,result,fields){
+  //   if (err) throw err;
+  //   res.redirect('/home');
+  // });
+});
+
 // Handle POST request for User Login
 router.post('/auth_login', function(req,res,next){
   var email = req.body.email;
@@ -83,6 +93,36 @@ router.post('/auth_login', function(req,res,next){
   });
 });
 
+router.post('/new_course', function(req,res,next){
+  var lecture = req.body.lecture;
+  var course = req.body.course;
+  var email = req.body.email;
+  var sql = 'insert into course_log (lecture, course_name, email) values(?,?,?);';
+  con.query(sql,[lecture, course, email], function(err,result,fields){
+    if (err) throw err;
+    res.redirect('/home');
+  });
+});
+
+router.post('/classmate_search', function(req,res,next){
+  var lecture = req.body.lecture;
+  var course = req.body.course;
+  var sql = 'select * from course_log where course_name = ?;';
+  con.query(sql,[course, lecture], function(err,result,fields){
+    var rows = [];
+    console.log(result)
+    if (err) throw err;
+    if (result.length == 0) {
+      res.render('result', {message : 'No Classmate Found', rows : result,})
+    }
+    else {
+      res.render('result', {
+        message : 'We Have Found You These Classmates',
+        rows : result,
+      })
+    }
+  });
+});
 
 
 //Route for home page
@@ -100,6 +140,13 @@ router.get('/home', function(req, res, next){
 //Route for new_post page
 router.get('/new_post', function(req,res,next){
   res.render('board')
+});
+
+
+
+//Route for new_post page
+router.get('/classmate_search', function(req,res,next){
+  res.render('classmate')
 });
 
 //Route for new_post page

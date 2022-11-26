@@ -1,0 +1,8 @@
+extends ../layout 
+
+block content 
+    .reg-box 
+        form(acion="/say_hi", method="post")
+            .form-group     
+                input(type="text" name="msg" class="form-control" placeholder="Say Hi to your classmate" style="width: 300px;")
+            button(type="submit" class="btn btn-primary") Send

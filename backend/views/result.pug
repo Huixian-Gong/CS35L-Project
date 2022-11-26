@@ -1,0 +1,36 @@
+extends layout 
+
+block content 
+    .header 
+        .row
+            .col-sm-1
+                a(href="/home") Home
+            .col-sm-1 
+                a(href="/new_post") New Post 
+            .col-sm-2 
+                a(href="/new_course") Add a Course
+            .col-sm-1
+                a(href="/logout") Log Out
+    .login-box 
+        .header 
+            h2 Classmate Search
+        .body  
+            h3 #{message}
+            if rows.length != 0
+                .row 
+                    .col-sm-2 
+                        h4 email
+                    .col-sm-2 
+                        h4 lecture
+                for item in rows 
+                    .row 
+                        .col-sm-2
+                            p #{item.email}
+                        .col-sm-2 
+                            p #{item.lecture}
+                        .col-sm-1
+                        
+                        button(type="submit" value=item.email class="btn btn-primary" onclick="clickme()") Say Hi!
+                            
+                    br
+            a(href="/classmate_search") New Search

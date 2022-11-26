@@ -5,15 +5,17 @@ block content
         .row
             .col-sm-1 
                 a(href="/new_post") New Post
-            .col-sm-1
+            .col-sm-2
                 a(href="/new_course") Add a Course
+            .col-sm-2 
+                a(href="/classmate_search") Find a Classmate
             .col-sm-1
                 a(href="/logout") Log Out
     .welcome-box 
         h2 #{message}
         h3 This is Home Page
     .body
-        h4 Most recent post by your classmates
+        h4 Most recent post by our users
         br
         for item in rows 
             h5 #{item.time}
