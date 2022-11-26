@@ -1,6 +1,6 @@
 extends layout 
 
-block content 
+block content
     .header 
         .row
             .col-sm-2
@@ -13,11 +13,6 @@ block content
                 a(href="/classmate_search") Find a Classmate
             .col-sm-1
                 a(href="/logout") Log Out
-    .login-box 
-        .header 
-            h2 New Post
-        form(action="/new_post", method = "post")
-            .form-group   
-                label(for="content") Content 
-                textarea(type="content" name="content" class="form-control" rows="3" style="width: 400px;") 
-            button(type="submit" class="btn btn-primary") Submit
+    .welcome-box 
+        h2 Your message has been sent !
+        h3 The receiver will receive your message at their next login.

@@ -3,6 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 var bcrypt = require('bcrypt');
 var con = require('../database/con');
+const { render } = require('pug');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -64,15 +65,7 @@ router.post('/new_post', function(req,res,next){
   });
 });
 
-router.post('/say_hi', function(req,res,next){
-  var msg = req.body.msg;
-  console.log(msg)
-  // var sql = 'insert into post_time (cont) values(?);';
-  // con.query(sql,[content], function(err,result,fields){
-  //   if (err) throw err;
-  //   res.redirect('/home');
-  // });
-});
+
 
 // Handle POST request for User Login
 router.post('/auth_login', function(req,res,next){
@@ -110,7 +103,6 @@ router.post('/classmate_search', function(req,res,next){
   var sql = 'select * from course_log where course_name = ?;';
   con.query(sql,[course, lecture], function(err,result,fields){
     var rows = [];
-    console.log(result)
     if (err) throw err;
     if (result.length == 0) {
       res.render('result', {message : 'No Classmate Found', rows : result,})
@@ -124,6 +116,16 @@ router.post('/classmate_search', function(req,res,next){
   });
 });
 
+router.post('/say_hi', function(req,res,next){
+  var message = req.body.message;
+  var email = req.session.email;
+  var receiver = req.body.receiver;
+  var sql = 'insert into message (sender, receiver, message) values(?,?,?);';
+  con.query(sql,[email, receiver, message], function(err,result,fields){
+    if (err) throw err;
+    res.render('message')
+  });
+});
 
 //Route for home page
 router.get('/home', function(req, res, next){
@@ -131,7 +133,8 @@ router.get('/home', function(req, res, next){
   con.query(sql, function(err,result,next) {
     if (err) throw err;
     res.render('home', {
-      message : 'Welcome, ' + req.session.fullname , 
+      message : 'Welcome, ' + req.session.fullname, 
+      email : req.session.email,
       rows : result,
     })
   });
@@ -149,10 +152,44 @@ router.get('/classmate_search', function(req,res,next){
   res.render('classmate')
 });
 
+
+router.post('/message_center', function(req,res,next){
+  var receiver = req.body.receiver;
+  var sql = 'select * from message where receiver = ?;';
+  con.query(sql,[receiver], function(err,result,fields){
+    var rows = [];
+    if (err) throw err;
+    if (result.length == 0) {
+      res.render('message_center', {message : 'No New Messages !', rows : result,})
+    }
+    else {
+      res.render('message_center', {
+        message : 'You Have New Messages !',
+        email : receiver,
+        rows : result,
+      })
+    }
+  });
+});
+
+router.post('/mark_read', function(req,res,next){
+  var email = req.body.email;
+  console.log(email)
+  var sql = 'delete from message where receiver = ?;';
+  con.query(sql,[email], function(err,result,fields){
+    var rows = [];
+    if (err) throw err;
+    res.render('message_center', {message : 'No New Messages !', rows : [],})
+  });
+});
+
+
+
 //Route for new_post page
 router.get('/new_course', function(req,res,next){
   res.render('course')
 });
+
 
 router.get('/logout', function(req,res,next){
   if(req.session.email) {

@@ -3,9 +3,11 @@ extends layout
 block content
     .header 
         .row
-            .col-sm-1 
-                a(href="/new_post") New Post
             .col-sm-2
+                a(href="/home") Home
+            .col-sm-2
+                a(href="/new_post") New Post 
+            .col-sm-2 
                 a(href="/new_course") Add a Course
             .col-sm-2 
                 a(href="/classmate_search") Find a Classmate
@@ -14,7 +16,16 @@ block content
     .welcome-box 
         h2 #{message}
         h3 This is Home Page
+        form(action="/message_center", method = "post")
+            -var receiver = email
+            //- -console.log(receiver)
+            .form-group 
+                input(type="hidden" name="receiver" value=receiver)
+            button(type="submit" class="btn btn-primary") Message Center
+
+        //- a(href="/message_center") Message Center
     .body
+        br
         h4 Most recent post by our users
         br
         for item in rows 

@@ -3,12 +3,14 @@ extends layout
 block content 
     .header 
         .row
-            .col-sm-1
+            .col-sm-2
                 a(href="/home") Home
-            .col-sm-1 
+            .col-sm-2
                 a(href="/new_post") New Post 
             .col-sm-2 
                 a(href="/new_course") Add a Course
+            .col-sm-2 
+                a(href="/classmate_search") Find a Classmate
             .col-sm-1
                 a(href="/logout") Log Out
     .login-box 
@@ -29,8 +31,13 @@ block content
                         .col-sm-2 
                             p #{item.lecture}
                         .col-sm-1
-                        
-                        button(type="submit" value=item.email class="btn btn-primary" onclick="clickme()") Say Hi!
-                            
+                            form(action="/say_hi", method = "post")
+                                -var receiver = item.email
+                                .form-group   
+                                    label(for="message")  
+                                    input(type="text" name="message" class="form-control" placeholder="Say Hi to your classmate! " style="width: 300px;")
+                                .form-group 
+                                    input(type="hidden" name="receiver" value=receiver)
+                                button(type="submit" class="btn btn-primary") Send!            
                     br
             a(href="/classmate_search") New Search

@@ -1,0 +1,40 @@
+extends layout 
+
+block content
+    .header 
+        .row
+            .col-sm-2
+                a(href="/home") Home
+            .col-sm-2
+                a(href="/new_post") New Post 
+            .col-sm-2 
+                a(href="/new_course") Add a Course
+            .col-sm-2 
+                a(href="/classmate_search") Find a Classmate
+            .col-sm-1
+                a(href="/logout") Log Out
+    .welcome-box 
+        h3 This is your Message Center
+    .body
+        br
+        h4 #{message}
+        br
+        if rows.length != 0
+            .row 
+                .col-sm-2 
+                    h4 Sender
+                .col-sm-2 
+                    h4 Message
+            for item in rows 
+                .row 
+                    .col-sm-2
+                        p #{item.sender}
+                    .col-sm-2 
+                        p #{item.message}
+                br
+            .col-sm-1
+                //- -console.log(email)
+                form(action="/mark_read", method = "post")
+                    .form-group 
+                        input(type="hidden" name="email" value=email)
+                    button(type="submit" class="btn btn-primary") Mark All As Read! 
