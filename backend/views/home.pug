@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+    .header 
+        .row
+            .col-sm-1 
+                a(href="/new_post") New Post
+            .col-sm-1
+                a(href="/new_course") Add a Course
+            .col-sm-1
+                a(href="/logout") Log Out
+    .welcome-box 
+        h2 #{message}
+        h3 This is Home Page
+    .body
+        h4 Most recent post by your classmates
+        br
+        for item in rows 
+            h5 #{item.time}
+            p #{item.cont}
+            br

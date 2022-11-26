@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+    .header 
+        .row
+            .col-sm-1
+                a(href="/home") Home
+            .col-sm-1 
+                a(href="/new_post") New Post
+            .col-sm-1
+                a(href="/logout") Log Out
+    .login-box 
+        .header 
+            h2 Add a Course
+        form(action="/new_course", method = "post")
+            .form-group   
+                label(for="course") Course Name and Catalog Number
+                input(type="text" name="course" class="form-control" placeholder="Example: CS 35L" style="width: 200px;")
+            
+            button(type="submit" class="btn btn-primary") Submit
