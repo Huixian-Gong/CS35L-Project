@@ -16,7 +16,7 @@ function MainNavigation() {
                         <Link to="/login">Login</Link>
                     </li>
                     <li>
-                        <Link to="/sign-up">Sign up</Link>
+                        <Link to="/signup">Sign up</Link>
                     </li>
                 </ul>
             </nav>

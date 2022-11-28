@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./Homepage.module.css";
+import style from "./Welcome.module.css";
 
-function Homepage() {
+function Welcome() {
     return (
         <div>
             <header className={style.header}>Hello! Welcome to Nraelniurb!</header>
@@ -9,4 +9,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default Welcome;

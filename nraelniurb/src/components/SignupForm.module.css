@@ -49,6 +49,7 @@ form .inner .group {
     color: #09085c;
 }
 
+form .inner .group button,
 form .inner .group input {
     display: block;
     width: 100%;
@@ -58,16 +59,19 @@ form .inner .group input {
     transition: 0.4s;
 }
 
-form .inner .group input:focus {
+form .inner .group button:focus
+form .inner .group input:focus
+{
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
+form .inner button[type="submit"],
 form .inner input[type="submit"],
 .welcome button {
     display: inline_block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #FFCE00 30%, #FFCE00 50%, #00008B );
+    background-image: linear-gradient(to right, #00008B 50%, #00008B 20%, #FFCE00 );
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
@@ -76,6 +80,12 @@ form .inner input[type="submit"],
     cursor: pointer;
 }
 
-form .inner input[type="submit"]:hover,.welcome button:hover {
+form .inner button[type="submit"]:hover,
+form .inner input[type="submit"]:hover ,
+.welcome button:hover {
     background-position: 100% 0%;
+}
+
+.error {
+    color:#990F02;
 }

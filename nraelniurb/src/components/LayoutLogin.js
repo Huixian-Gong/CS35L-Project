@@ -1,12 +1,12 @@
 import React from "react";
-import MainNavigation from "./MainNavigation";
-import style from './Layout.module.css';
+import LoginNavigation from "./LoginNavigation";
+import style from './LayoutLogin.module.css';
 
 function Layout (props) {
     return (
     <div>
-        <MainNavigation/>
-        <main className={style.main}>
+        <LoginNavigation/>
+        <main>
             {props.children}
         </main>
     </div>
