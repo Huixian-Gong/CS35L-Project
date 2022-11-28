@@ -4,6 +4,7 @@ import Signin from './components/SigninForm';
 import Signup from './components/SignupForm';
 import Welcome from './components/Welcome'
 import Account from './componentsacc/Account';
+import AddCourse from './componentsacc/AddCourse';
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -34,6 +35,8 @@ function App() {
       {(user.email != '') ? (
         <LayoutAccount>
           <Routes>
+          <Route path="/account" element={<Account/>}></Route>
+          <Route path="/add-course" element={<AddCourse user={user}/>}></Route>
           <Route path="/" element={<Logout Logout={Logout}/>}></Route>
           <Route path="/todolist" element={<TodoList user={user}/>}></Route>
           </Routes>

@@ -3,6 +3,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import Todo from './Todo';
 import { db } from '../firebase';
 import style from './TodoList.module.css'
+import Block from '../ui/Block'
 import {
   query,
   collection,
@@ -52,22 +53,23 @@ function TodoList({user}) {
   };
 
   return (
-    <div>
+    
       <div>
         <h2>Todo List</h2>
+          <Block>
             <form onSubmit={createTodo} className={style.form}>
-                    <div className={style.control}>
-                        <input
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            className={style.textarea}
-                            type='text'
-                            placeholder='Add Todo'
-                        />
-                    </div>
-                <button className={style.actions}>
-                    <AiOutlinePlus/>
-                </button>
+                <div className={style.control}>
+                    <input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        className={style.textarea}
+                        type='text'
+                        placeholder='Add Todo'
+                    />
+                      <button className={style.actions}>
+                        <AiOutlinePlus/>
+                      </button>  
+                </div>
             </form>
         <ul>
           {todos.map((todo, index) => (
@@ -81,8 +83,9 @@ function TodoList({user}) {
         {todos.length < 1 ? null : (
           <p className={style.count}>{`You have ${todos.length} todos`}</p>
         )}
+        </Block>
       </div>
-    </div>
+    
   );
 }
 

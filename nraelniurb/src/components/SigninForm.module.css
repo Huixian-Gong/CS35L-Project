@@ -59,11 +59,11 @@ form .inner .group input {
     transition: 0.4s;
 }
 
-form .inner .group button:focus
+/* form .inner .group button:focus
 form .inner .group input:focus
 {
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-}
+    box-shadow: 30px 30px 30px rgba(243, 2, 2, 0.483);
+} */
 
 form .inner button[type="submit"],
 form .inner input[type="submit"],
@@ -71,10 +71,11 @@ form .inner input[type="submit"],
     display: inline_block;
     padding: 10px 15px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #00008B 50%, #00008B 20%, #FFCE00 );
-    background-size: 200%;
+    background-image: linear-gradient(to right, #00008B 50%,
+     #00008B 20%, #FFCE00 );
+    background-size: 2000%;
     background-position: 0%;
-    transition: 0.4s;
+    transition: 0.35s;
     color: #FFF;
     font-weight: 700;
     cursor: pointer;

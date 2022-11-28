@@ -31,7 +31,10 @@ const Signin = ({ Login }) => {
             {(error != "") ? ( <div className={style.error}>{"Invalid Email Address/Password"}</div> ) : ""}
             <div className={style.group}>
               <label htmlFor="email">Email Address</label>
-              <input onChange={(e) => setEmail(e.target.value)} type='email'/>
+              <input 
+                onChange={(e) => setEmail(e.target.value)} 
+                type='email'>
+                </input>
             </div>
             <div className={style.group}>
               <label htmlFor="passward">Password</label>
