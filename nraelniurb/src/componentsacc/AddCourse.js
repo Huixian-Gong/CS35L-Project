@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
-import Todo from './Todo';
 import { db } from '../firebase';
-// import style from './TodoList.module.css'
 import style from "../components/SigninForm.module.css"
 import {
   query,
@@ -16,7 +14,8 @@ import {
 } from 'firebase/firestore';
 import Block from '../ui/Block'
 
-function AddCourse ({user}) {
+function AddCourse (user) {
+    console.log(user.user);
     const [Course, setCourse] = useState([]);
     const [inputCN, setInputCN] = useState('');
     const [inputUN, setInputUN] = useState('');
@@ -40,7 +39,19 @@ function AddCourse ({user}) {
           courseName: inputCN,
           lecNumber: inputLN,
           userName: inputUN,
-          userEmail: user.email
+          userEmail: user.user
+        });
+        await addDoc(collection(db, "Course"), {
+            courseName: inputCN,
+            lecNumber: inputLN,
+            userName: inputUN,
+            userEmail: user.user
+        });
+        await addDoc(collection(db, user.user), {
+            courseName: inputCN,
+            lecNumber: inputLN,
+            userName: inputUN,
+            userEmail: user.user
         });
         setInputCN('');
         setInputLN('');

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import Todo from './Todo';
-import { db } from '../firebase';
+import { db } from '../../firebase';
 import style from './TodoList.module.css'
-import Block from '../ui/Block'
+import Block from '../../ui/Block'
 import {
   query,
   collection,
@@ -15,8 +15,8 @@ import {
   where
 } from 'firebase/firestore';
 
-function TodoList({user}) {
-  console.log("Todo email:", user.email)
+function TodoList(user) {
+  console.log("Todo email:", user.user)
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
@@ -29,14 +29,14 @@ function TodoList({user}) {
     }
     await addDoc(collection(db, 'todos'), {
       text: input,
-      email: user.email,
+      email: user.user,
     });
     setInput('');
   };
 
   // Read todo from firebase
   useEffect(() => {
-    const q = query(collection(db, 'todos'), where ("email","==",user.email));
+    const q = query(collection(db, 'todos'), where ("email","==",user.user));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let todosArr = [];
       querySnapshot.forEach((doc) => {
@@ -52,8 +52,6 @@ function TodoList({user}) {
   const deleteTodo = async (id) => {
     await deleteDoc(doc(db, 'todos', id));
   };
-
-
 
   return (
       <div>

@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Classmates from './Classmates';
+import { db } from '../../firebase';
+import {
+  query,
+  collection,
+  onSnapshot,
+  updateDoc,
+  doc,
+  addDoc,
+  deleteDoc,
+  where,
+  getDocs
+} from 'firebase/firestore';
 
-function FindClassmate({user}) {
-
+function FindClassmate(user) {
+  const [users,setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [CN, setCN] = useState('');
 
@@ -15,6 +27,18 @@ function FindClassmate({user}) {
     setMessage("");
     console.log("coursename : ",CN);
   };
+
+  if(CN != ""){
+    console.log("user.email : ",user.user)
+    const q = query(collection(db,CN),where("userEmail","!=", user.user));
+    const getUsers = async () => {
+      const data = await getDocs(q);
+      setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id })));
+    }
+    getUsers();
+    setCN("");
+    console.log(users);
+  }
 
   return (
     <div>
@@ -29,16 +53,14 @@ function FindClassmate({user}) {
             />
             <button onClick={handleClick}>Search</button>  
           </div>
-          <Classmates/>
+          {users.map((u, index) => (
+            <Classmates
+              key={index}
+              u={u}
+            />
+          ))}
     </div>
   );
 }
-//<Classmates email={user.email} classname={CN}/>
+
 export default FindClassmate;
-//
-            // {td.map(() => (
-            //   <Classmates
-            //     email={user.email}
-            //     classname={input}
-            //   />
-            // ))}
