@@ -16,7 +16,7 @@ import {
 } from 'firebase/firestore';
 
 function TodoList({user}) {
-    console.log("Todo email:", user.email)
+  console.log("Todo email:", user.email)
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
@@ -43,6 +43,7 @@ function TodoList({user}) {
         todosArr.push({ ...doc.data(), id: doc.id });
       });
       setTodos(todosArr);
+      console.log(todosArr);
     });
     return () => unsubscribe();
   }, []);
@@ -52,8 +53,9 @@ function TodoList({user}) {
     await deleteDoc(doc(db, 'todos', id));
   };
 
+
+
   return (
-    
       <div>
         <h2>Todo List</h2>
           <Block>

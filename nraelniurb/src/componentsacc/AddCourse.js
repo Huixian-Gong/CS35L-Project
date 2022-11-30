@@ -36,7 +36,7 @@ function AddCourse ({user}) {
             alert('Name cannot be empty');
             return;
         }  
-        await addDoc(collection(db, 'Course'), {
+        await addDoc(collection(db, inputCN), {
           courseName: inputCN,
           lecNumber: inputLN,
           userName: inputUN,
@@ -73,14 +73,10 @@ function AddCourse ({user}) {
                             value={inputUN}
                             onChange={(e) => setInputUN(e.target.value)}/>
                     </div>
-                    <button type="submit"> Submit </button>
+                    <button type="add_course"> Submit </button>
                 </div>
             </form>
         </Block>
-
-        <div>
-            Course you may need
-        </div>
     </div>
     );
 }
