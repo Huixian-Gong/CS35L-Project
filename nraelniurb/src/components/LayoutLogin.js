@@ -7,7 +7,7 @@ function Layout (props) {
     <div  style={{ 
         backgroundImage: `url("https://shb.ais.ucla.edu/shibboleth-idp/img/skyline.jpg")` ,
         backgroundSize:"cover",
-        minHeight: 1400,
+        height: "100vh",
         backgroundPosition: 'center',
         }} >
         <LoginNavigation/>

@@ -1,17 +1,39 @@
 .header {
   width: 80%;
-  height: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #2774AE;
-  padding: 0 10%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(34,72,120);
+    background: linear-gradient(180deg, rgba(4,48,95,1) 0%, rgba(38,81,131,1) 100%);
+    padding: 0 10%;
 }
 
 .logo {
   font-size: 0rem;
   color: white;
   font-weight: bold;
+  left: 0;
+  display: flex;
+  white-space: nowrap;
+  position: sticky;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  margin: 30px 0;
+}
+
+.lt {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  /* position: relative; */
+  text-align: center;
+  padding-top:40px;
+  padding-left: 20px;
 }
 
 .header ul {

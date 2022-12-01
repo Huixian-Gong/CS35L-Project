@@ -28,11 +28,11 @@ function AddCourse (user) {
           return;
         }
         if (inputLN === '') {
-            alert('Lec Name cannot be empty');
+            alert('Lecture number cannot be empty');
             return;
         }
         if (inputUN === '') {
-            alert('Name cannot be empty');
+            alert('Your name cannot be empty');
             return;
         }  
         await addDoc(collection(db, inputCN), {
@@ -59,8 +59,9 @@ function AddCourse (user) {
       };
     return (
     <div>
+    <div className={style.h2}>Add a Course</div>
         <Block>
-        <div className={style.h2}>Add a Course</div>
+        
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
                     <div className={style.group}>
@@ -88,6 +89,7 @@ function AddCourse (user) {
                             value={inputUN}
                             onChange={(e) => setInputUN(e.target.value)}/>
                     </div>
+                    <div> &nbsp;</div>
                     <button type="submit"> Submit </button>
                 </div>
             </form>

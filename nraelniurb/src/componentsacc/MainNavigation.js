@@ -7,9 +7,14 @@ import logo from './../ui/1f43b.png'
 function MainNavigation() {
     return (
         <header className={style.header}>
-            <div className={style.logo}>
-                {/* 🐼Nraelniurb */}
-            <img src={logo} alt="Logo" />
+            <div class="wrapper">
+                <div className={style.logo}>
+                    <img src={logo} alt="Logo" height={140}/>
+                
+                    <div class={style.lt}> 
+                    Nraelniurb
+                </div>
+                </div>
             </div>
             <nav>
                 <ul>

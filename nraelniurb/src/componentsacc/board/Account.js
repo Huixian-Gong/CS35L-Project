@@ -41,8 +41,6 @@ function Account(user){
     
     
     <div>
-    
-          
       Study List
       {users.map((c, index) => (
               <Classes
