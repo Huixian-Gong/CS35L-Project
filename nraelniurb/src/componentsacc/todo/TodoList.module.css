@@ -23,7 +23,7 @@
     font: inherit;
     border-radius: 4px;
     font-size: 1cm;
-    background-color: #f4f1f1;
+    background-color: #e8e8e8;
     border: 1px solid rgb(255, 255, 255);
     padding: 0.25rem;
     width: 100%;
@@ -37,23 +37,27 @@
   button {
     font: inherit;
     cursor: pointer;
-    background-color: #fffb00;
-    color: #080077;
+    background-color: rgb(238, 216, 89);
+    color: #2774AE;
     padding: 0.3rem 1rem;
-    border: 1px solid #fffb00;
+    border: 1px solid rgb(238, 216, 89);
     border-radius: 4px;
     font-weight: bold;
   }
   
 button:hover,
  button:active {
-    background-color: #2d24a5;
-    border-color: #2d24a5;
+    background-color: #2774AE;
+    border-color: #2774AE;
   }
 
-h2 {
+.h2 {
     color: #888;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 500;
     margin-bottom: 30px;
+}
+
+.symbol {
+  color:#fff;
 }

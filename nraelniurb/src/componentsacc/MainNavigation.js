@@ -2,11 +2,15 @@
 import { Link } from 'react-router-dom'
 
 import style from './MainNavigation.module.css'
+import logo from './../ui/1f43b.png'
 
 function MainNavigation() {
     return (
         <header className={style.header}>
-            <div className={style.logo}>Nraelniurb</div>
+            <div className={style.logo}>
+                {/* 🐼Nraelniurb */}
+            <img src={logo} alt="Logo" />
+            </div>
             <nav>
                 <ul>
                     <li>
@@ -25,9 +29,7 @@ function MainNavigation() {
                         <Link to='/todolist'>Todo</Link>
                     </li>
                     <li>
-                        <Link to='/'>
-                            Log Out
-                        </Link>
+                        <Link to='/'>Log Out</Link>
                     </li>              
                 </ul>
             </nav>

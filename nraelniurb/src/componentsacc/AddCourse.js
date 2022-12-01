@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { db } from '../firebase';
-import style from "../components/SigninForm.module.css"
+import style from "./AddCourse.module.css"
 import {
   query,
   collection,
@@ -59,13 +59,14 @@ function AddCourse (user) {
       };
     return (
     <div>
-        <div>Add Course</div>
+        <div className={style.h2}>Add Course</div>
         <Block>
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
                     <div className={style.group}>
                         <label></label>
                         <input 
+                            className={style.input}
                             placeholder='Course Name'
                             value={inputCN}
                             onChange={(e) => setInputCN(e.target.value)}>
@@ -73,18 +74,21 @@ function AddCourse (user) {
                     </div>
                     <div className={style.group}>
                         <label></label>
-                        <input placeholder='Lecture Number' 
+                        <input
+                            className={style.input} 
+                            placeholder='Lecture Number' 
                             value={inputLN}
                             onChange={(e) => setInputLN(e.target.value)}/>
                     </div>
                     <div className={style.group}>
                         <label></label>
-                        <input 
+                        <input
+                            className={style.input}
                             placeholder='Your Preferred Name'
                             value={inputUN}
                             onChange={(e) => setInputUN(e.target.value)}/>
                     </div>
-                    <button type="add_course"> Submit </button>
+                    <button type="submit"> Submit </button>
                 </div>
             </form>
         </Block>

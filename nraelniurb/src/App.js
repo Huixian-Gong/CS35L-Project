@@ -11,6 +11,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import LayoutLogin from './components/LayoutLogin';
 import LayoutAccount from './componentsacc/LayoutAccount';
 import TodoList from './componentsacc/todo/TodoList';
+import Message from './componentsacc/message/Message';
 
 import {db} from "./firebase"
 import {query,collection} from "firebase/firestore"
@@ -18,7 +19,7 @@ import {query,collection} from "firebase/firestore"
 function App() {
   const [user, setUser] = useState('')
   const Login = details => {
-    console.log(details);
+    console.log("User Email: ",details);
     if (details.email != ''){
       setUser(details)
     }
@@ -34,11 +35,12 @@ function App() {
       {(user != '') ? (
         <LayoutAccount>
           <Routes>
-          <Route path="/" element={<Logout Logout={Logout}/>}></Route>
-          <Route path="/account" element={<Account user={user}/>}></Route>
-          <Route path="/addcourse" element={<AddCourse user={user}/>}></Route>
-          <Route path='/findclassmate' element={<FindClassmate user={user}/>}></Route>
-          <Route path="/todolist" element={<TodoList user={user}/>}></Route>
+            <Route path="/" element={<Logout Logout={Logout}/>}></Route>
+            <Route path="/account" element={<Account user={user}/>}></Route>
+            <Route path="/addcourse" element={<AddCourse user={user}/>}></Route>
+            <Route path='/findclassmate' element={<FindClassmate user={user}/>}></Route>
+            <Route path="/todolist" element={<TodoList user={user}/>}></Route>
+            <Route path="/message" element={<Message user={user}/>}></Route>
           </Routes>
         </LayoutAccount>  
       ) : (

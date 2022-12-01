@@ -4,13 +4,13 @@ import style from './Todo.module.css'
 
 const Todo = ({ todo, deleteTodo }) => {
   return (
-    <li className={todo.completed ? style.liComplete : style.li}>
-      <div className={style.row}>
+    <li>
+      <div>
         <p>
           {todo.text}
         </p>
       </div>
-      <button onClick={() => deleteTodo(todo.id)}>{<FaRegTrashAlt />}</button>
+      <button onClick={() => deleteTodo(todo.id)}>{<div className={style.symbol}><FaRegTrashAlt /></div>}</button>
     </li>
   );
 };

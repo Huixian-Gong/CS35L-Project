@@ -1,4 +1,5 @@
 import React ,{ useState } from 'react';
+import Classes from './Classes';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { db } from '../../firebase';
@@ -15,23 +16,38 @@ import {
 } from 'firebase/firestore';
 
 
-const Account = (user) => {
+function Account(user){
   const [users,setUsers] = useState([]);
-  const [email,setEmail] = useState('');
+  const [email,setEmail] = useState(user.user);
   // setEmail(user.user.email);
-  console.log(user);
- 
-  if(user != ""){
-    const q1 = collection(db,toString(user));
+  console.log(user.user);
+
+  if(email != ''){
+    console.log("account email :",email);
+    const q1 = collection(db,user.user);
     const getUsers = async () => {
       const data = await getDocs(q1);
       setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id })));
     }
     getUsers();
-    console.log(users);
+    setEmail('');
   }
 
-  return <div> your course <button>onSubmit</button> </div>
+  console.log(users);
+
+  
+
+  return (
+  <div>
+    your course
+    {users.map((c, index) => (
+            <Classes
+              key={index}
+              c={c}
+            />
+          ))}
+  </div>
+  );
 };
 
 export default Account;

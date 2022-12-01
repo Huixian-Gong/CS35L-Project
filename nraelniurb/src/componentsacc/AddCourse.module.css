@@ -1,0 +1,99 @@
+.h2 {
+    color: #888;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.main {
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 40rem;
+}
+
+form {
+    display: block;
+    position: relative;
+}
+
+input, button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: solid 2px rgb(200, 200, 200);
+}
+
+form .inner {
+    position: relative;
+    display: block;
+    background-color: rgb(244, 244, 244);
+    padding: 30px;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+form .inner h2 {
+    color: #888;
+    font-size: 80px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+form .inner .group {
+    display: block;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.inner .group label {
+    display: block;
+    color: #666;
+    font-size: 30px;
+    margin-bottom: 5px;
+    transition:  0.4s;
+}
+
+.inner .group:focus-within label {
+    color: #09085c;
+}
+
+form .inner .group button,
+form .inner .group input {
+    display: block;
+    width: 100%;
+    padding: 10px 13px;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+form .inner .group button:focus
+form .inner .group input:focus
+{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+form .inner button[type="submit"],
+form .inner input[type="submit"],
+.welcome button {
+    display: inline_block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, rgb(238, 216, 89) 50%, rgb(255,251,0) 20%, #2774AE );
+    background-size: 20000%;
+    background-position: 0%;
+    transition: 0s;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form .inner button[type="submit"]:hover,
+form .inner input[type="submit"]:hover ,
+.welcome button:hover {
+    background-position: 100% 0%;
+}
+
+.error {
+    color:#990F02;
+}

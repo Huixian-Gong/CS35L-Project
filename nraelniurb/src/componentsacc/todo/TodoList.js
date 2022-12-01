@@ -56,7 +56,7 @@ function TodoList(user) {
   return (
       <div>
         <h2>Todo List</h2>
-          <Block>
+          <Block className={style.h2}>
             <form onSubmit={createTodo} className={style.form}>
                 <div className={style.control}>
                     <input
@@ -67,9 +67,10 @@ function TodoList(user) {
                         placeholder='Add Todo'
                     />
                       <button className={style.actions}>
-                        <AiOutlinePlus/>
+                        <div className={style.symbol}><AiOutlinePlus/></div>
                       </button>  
                 </div>
+
             </form>
         <ul>
           {todos.map((todo, index) => (

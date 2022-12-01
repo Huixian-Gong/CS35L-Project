@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #080077;
+    background-color: #2774AE;
     padding: 0 10%;
   }
   
@@ -23,13 +23,13 @@
   }
   
   .header li {
-    margin-left: 5rem;
+    margin-left: 2rem;
   }
   
   .header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: #bebb26;
+    color: #dae6f0;
   }
   
   .header a:hover,

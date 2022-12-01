@@ -65,7 +65,7 @@ form .inner .group input:focus
     box-shadow: 30px 30px 30px rgba(243, 2, 2, 0.483);
 } */
 
-form .inner button[type="submit"],
+/* form .inner button[type="submit"],
 form .inner input[type="submit"],
 .welcome button {
     display: inline_block;
@@ -79,7 +79,26 @@ form .inner input[type="submit"],
     color: #FFF;
     font-weight: 700;
     cursor: pointer;
+} */
+
+
+
+form .inner button[type="submit"],
+form .inner input[type="submit"],
+.welcome button {
+    outline: none;
+    display: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #EED859;
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0s;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
 }
+
 
 form .inner button[type="submit"]:hover,
 form .inner input[type="submit"]:hover ,

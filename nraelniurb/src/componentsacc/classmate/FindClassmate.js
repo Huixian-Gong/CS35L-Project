@@ -12,8 +12,10 @@ import {
   where,
   getDocs
 } from 'firebase/firestore';
+import style from './FindClassmate.module.css'
 
 function FindClassmate(user) {
+  const email = user.user
   const [users,setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [CN, setCN] = useState('');
@@ -42,21 +44,27 @@ function FindClassmate(user) {
 
   return (
     <div>
-        <div>Find Classmate</div>
+        <div>
+          <h2>Find Classmate</h2>
+          </div>
           <div>
             <label>Course Name : </label>
             <input
+                className={style.input}
                 onChange={handleChange}
                 value={message}
                 type='text'
                 placeholder='Search Class'
             />
-            <button onClick={handleClick}>Search</button>  
+            &nbsp;
+            <button className={style.button} type="submit" onClick={handleClick}>Search</button>  
           </div>
+          &nbsp;
           {users.map((u, index) => (
             <Classmates
               key={index}
               u={u}
+              email={email}
             />
           ))}
     </div>
