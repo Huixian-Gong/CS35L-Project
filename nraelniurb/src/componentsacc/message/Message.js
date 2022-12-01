@@ -17,6 +17,11 @@ function Message(user){
   const [messages, setMessages] = useState([]);
   const [control, setControl] = useState(true);
 
+  const deleteMessage = async(id) => {
+    await deleteDoc(doc(db, 'Message', id));
+    setControl(true);
+  };
+
   if(control){
     console.log("inside");
     const q1 = query(collection(db,"Message"), where("receiverEmail","==", user.user));
@@ -36,6 +41,7 @@ function Message(user){
             <Chat
               key={index}
               m={m}
+              deleteMessage={deleteMessage}
             />
           ))}
       </div>

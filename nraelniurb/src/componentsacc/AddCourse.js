@@ -59,8 +59,8 @@ function AddCourse (user) {
       };
     return (
     <div>
-        <div className={style.h2}>Add Course</div>
         <Block>
+        <div className={style.h2}>Add a Course</div>
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
                     <div className={style.group}>

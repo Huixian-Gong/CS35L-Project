@@ -1,8 +1,10 @@
 .h2 {
-    color: #888;
+    color: #639dc9;
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 35px;
+    /* margin-bottom: 5px; */
 }
 
 .main {

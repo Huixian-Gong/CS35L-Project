@@ -39,7 +39,7 @@ function Account(user){
 
   return (
   <div>
-    your course
+    Study List
     {users.map((c, index) => (
             <Classes
               key={index}

@@ -1,7 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import style from './Chat.module.css'
+import { db } from '../../firebase';
+import {
+  query,
+  collection,
+  onSnapshot,
+  updateDoc,
+  doc,
+  addDoc,
+  deleteDoc,
+  where,
+  getDocs
+} from 'firebase/firestore';
+import { FaRegTrashAlt } from 'react-icons/fa';
+import { async } from '@firebase/util';
 
-const Chat = ({ m }) => {
+const Chat = ({ m , deleteMessage}) => {
+
+    const [message, setMessage] = useState();
+
     const [reply, setReply] = useState(false);
     function handleReply(e){
         e.preventDefault();
@@ -10,8 +27,18 @@ const Chat = ({ m }) => {
         } else {
             setReply(true);
         }
-    }
+    };
 
+    const createMessage = async (e) => {
+        e.preventDefault(e);
+        console.log("message:",message)
+        await addDoc(collection(db, "Message"), {
+          content: message,
+          receiverEmail: m.senderEmail,
+          senderEmail: m.receiverEmail
+        });
+        setMessage("");
+    };
 
     return (
       <div>
@@ -30,10 +57,11 @@ const Chat = ({ m }) => {
                 </div>
             </div>
             <div>
-            {reply ? <textarea></textarea> : ""}
+            {reply ? <textarea ></textarea> : ""}
                 
             </div>
-            <button onClick={handleReply} className={style.symbol}>{reply ? "Send" : "Reply"}</button>   
+            <button onClick={handleReply} className={style.symbol}>{reply ? "Send" : "Reply"}</button> 
+            <button className={style.symbol} onClick={() => deleteMessage(m.id)}> <FaRegTrashAlt/></button>  
       </div>
     );
   };
