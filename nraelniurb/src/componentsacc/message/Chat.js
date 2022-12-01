@@ -17,17 +17,9 @@ import { async } from '@firebase/util';
 
 const Chat = ({ m , deleteMessage}) => {
 
-    const [message, setMessage] = useState();
+    const [message, setMessage] = useState('');
 
-    const [reply, setReply] = useState(false);
-    function handleReply(e){
-        e.preventDefault();
-        if(reply){
-            setReply(false);
-        } else {
-            setReply(true);
-        }
-    };
+    console.log("send message :",message);
 
     const createMessage = async (e) => {
         e.preventDefault(e);
@@ -38,6 +30,18 @@ const Chat = ({ m , deleteMessage}) => {
           senderEmail: m.receiverEmail
         });
         setMessage("");
+    };    
+
+    const [reply, setReply] = useState(false);
+    function handleReply(e){
+        e.preventDefault();
+        if(reply){
+            createMessage(e);
+            setReply(false);
+
+        } else {
+            setReply(true);
+        }
     };
 
     return (
@@ -57,7 +61,7 @@ const Chat = ({ m , deleteMessage}) => {
                 </div>
             </div>
             <div>
-            {reply ? <textarea ></textarea> : ""}
+            {reply ? <textarea onChange={(e) => setMessage(e.target.value)}></textarea> : ""}
                 
             </div>
             <button onClick={handleReply} className={style.symbol}>{reply ? "Send" : "Reply"}</button> 
