@@ -35,7 +35,10 @@ function Account(user){
 
   console.log(users);
 
-  
+  const deleteClass = async (id) => {
+    await deleteDoc(doc(db, user.user, id));
+    setEmail(user.user)
+  };
 
   return (
     
@@ -46,6 +49,7 @@ function Account(user){
               <Classes
                 key={index}
                 c={c}
+                deleteClass={deleteClass}
               />
             ))}
     </div>
