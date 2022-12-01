@@ -36,15 +36,16 @@ const Signup = () => {
             type='email'
             placeholder='Example: JoeBruin@g.ucla.edu'
           />
-        </div>
-        <div className={style.group}>
-          <label className='py-2 font-medium'>Password</label>
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            className='border p-3'
-            type='password'
-          />
-        </div>
+          </div>
+          <div className={style.group}>
+            <label className='py-2 font-medium'>Password</label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              className='border p-3'
+              type='password'
+            />
+          </div>
+          <div> &nbsp;</div>
         <button type="submit"> Sign Up </button>
         </div>
       </form>

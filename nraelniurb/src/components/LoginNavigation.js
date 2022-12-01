@@ -5,12 +5,13 @@ import classes from './LoginNavigation.module.css'
 
 function MainNavigation() {
     return (
+        
         <header className={classes.header}>
             <div className={classes.logo}>Nraelniurb</div>
             <nav>
                 <ul>
                     <li>
-                        <Link to='/'> Welcome to Nraelniurb</Link>
+                        {/* <Link to='/'> Home</Link> */}
                     </li>
                     <li>
                         <Link to="/login">Login</Link>

@@ -1,17 +1,19 @@
 .header {
     width: 80%;
-    height: 10rem;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #2774AE;
+    background-color: rgb(34,72,120);
+    background: linear-gradient(180deg, rgba(4,48,95,1) 0%, rgba(38,81,131,1) 100%);
     padding: 0 10%;
   }
   
   .logo {
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: white;
-    font-weight: bold;
+    font-weight:lighter;
+
   }
   
   .header ul {
@@ -23,7 +25,7 @@
   }
   
   .header li {
-    margin-left: 2rem;
+    margin-left: 5rem;
   }
   
   .header a {

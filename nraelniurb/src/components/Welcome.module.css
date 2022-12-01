@@ -1,11 +1,13 @@
 .header {
+    /* font-family: DejaVu Sans Mono, monospace; */
     font-style: italic;
     font-size: 90px;
     left: 0;
     line-height: 200px;
-    margin-top: -100px;
+    margin-top: -180px;
     position: absolute;
     text-align: center;
     top: 50%;
     width: 100%;
+    color: rgb(218, 229, 235);
 }

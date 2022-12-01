@@ -38,15 +38,20 @@ function Account(user){
   
 
   return (
-  <div>
-    Study List
-    {users.map((c, index) => (
-            <Classes
-              key={index}
-              c={c}
-            />
-          ))}
-  </div>
+    
+    
+    <div>
+    
+          
+      Study List
+      {users.map((c, index) => (
+              <Classes
+                key={index}
+                c={c}
+              />
+            ))}
+    </div>
+    
   );
 };
 
