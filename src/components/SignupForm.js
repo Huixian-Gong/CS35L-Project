@@ -46,6 +46,7 @@ const Signup = () => {
         <h2>Sign up</h2>
         {(error == "Firebase: Error (auth/invalid-email).") ? ( <div className={style.error}>{"Error, Please enter valid email"}</div> ) : ""}
         {(error == "Firebase: Password should be at least 6 characters (auth/weak-password).") ? ( <div className={style.error}>{"Error, password should be at least 6 characters"}</div> ) : ""}
+        {(error == "Firebase: Error (auth/email-already-in-use).") ? ( <div className={style.error}>{"Error,Email is already in use!"}</div> ) : ""}
         {match ? "" : ( <div className={style.error}>{"Error, passwords doesn't match"}</div> )}
           <label className={style.group}>Email Address</label>
           <input
