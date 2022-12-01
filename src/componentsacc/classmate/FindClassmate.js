@@ -13,6 +13,7 @@ import {
   getDocs
 } from 'firebase/firestore';
 import style from './FindClassmate.module.css'
+import { Navigate } from 'react-router-dom';
 
 function FindClassmate(user) {
   const email = user.user
@@ -41,12 +42,17 @@ function FindClassmate(user) {
     setCN("");
     console.log(users);
   }
-
+  function handleSubmit(e){
+    e.preventDefault();
+    Navigate("/findclassmate");
+  }
   return (
     <div>
         <div>
           <h2>Find Classmate</h2>
           </div>
+          <form onSubmit={handleSubmit}>
+
           <div>
             <label>Course Name : </label>
             <input
@@ -59,6 +65,7 @@ function FindClassmate(user) {
             &nbsp;
             <button className={style.button} type="submit" onClick={handleClick}>Search</button>  
           </div>
+          </form>
           &nbsp;
           {users.map((u, index) => (
             <Classmates
@@ -72,3 +79,4 @@ function FindClassmate(user) {
 }
 
 export default FindClassmate;
+ 
