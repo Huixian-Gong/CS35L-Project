@@ -13,7 +13,7 @@ Visit our [GitHub Pages page](https://github.com/Huixian-Gong/CS35L-Project)!
 3. After the previous two steps, open a terminal and navigate to your favorite directory. Then enter the following commands:
 ```
 git clone https://github.com/Huixian-Gong/CS35L-Project
-cd nraelniurb
+cd CS35L-Project
 npm install
 npm start
 ```
