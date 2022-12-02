@@ -2,6 +2,7 @@ import React ,{ useState, useEffect } from 'react';
 import Logout from './componentsacc/Logout';
 import Signin from './components/SigninForm';
 import Signup from './components/SignupForm';
+import ResetPassword from './components/ResetPassword';
 import Welcome from './components/Welcome'
 import Account from './componentsacc/board/Account';
 import AddCourse from './componentsacc/AddCourse';
@@ -50,6 +51,7 @@ function App() {
             <Route path="/" element={<Welcome/>}></Route>
             <Route path='/login' element={<Signin Login={Login}/>}/>
             <Route path='/signup' element={<Signup />}/>
+            <Route path='/resetpassword' element={<ResetPassword />}/>
           </Routes>
         </LayoutLogin>
       </AuthContextProvider>

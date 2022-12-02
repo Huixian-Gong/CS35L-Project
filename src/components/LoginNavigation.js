@@ -19,6 +19,9 @@ function MainNavigation() {
                     <li>
                         <Link to="/signup">Sign up</Link>
                     </li>
+                    <li>
+                        <Link to="/resetpassword">Reset Password</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
