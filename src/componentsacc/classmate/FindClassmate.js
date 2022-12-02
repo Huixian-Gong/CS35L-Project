@@ -14,6 +14,7 @@ import {
 } from 'firebase/firestore';
 import style from './FindClassmate.module.css'
 import { Navigate } from 'react-router-dom';
+import Block from '../../ui/Block'
 
 function FindClassmate(user) {
   const email = user.user
@@ -49,23 +50,29 @@ function FindClassmate(user) {
   return (
     <div>
         <div>
-          <h2>Find Classmate</h2>
+          <h2 className={style.h2}>Find Classmate</h2>
           </div>
-          <form onSubmit={handleSubmit}>
-
-          <div>
-            <label>Course Name : </label>
-            <input
-                className={style.input}
-                onChange={handleChange}
-                value={message}
-                type='text'
-                placeholder='Search Class'
-            />
-            &nbsp;
-            <button className={style.button} type="submit" onClick={handleClick}>Search</button>  
-          </div>
-          </form>
+          <Block>
+            <form onSubmit={handleSubmit}>
+            <div className={style.inner}>
+              <div> &nbsp;
+                <label>&nbsp;Course Name : </label>
+                  <div>
+                    <input
+                      className={style.input}
+                      onChange={handleChange}
+                      value={message}
+                      type='text'
+                      placeholder='Example: CS 35L'
+                    />
+                  </div>
+                  <div> &nbsp;</div>
+                  <button className={style.button} type="submit" onClick={handleClick}>Search</button>  
+                  {/* <div> &nbsp;</div> */}
+                  </div>
+            </div>
+            </form>
+          </Block>
           &nbsp;
           {users.map((u, index) => (
             <Classmates

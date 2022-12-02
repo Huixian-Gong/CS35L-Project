@@ -8,7 +8,6 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth';
 import { auth } from '../firebase';
-import { get } from 'mongoose';
 
 const UserContext = createContext();
 
