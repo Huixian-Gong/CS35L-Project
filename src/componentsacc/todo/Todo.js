@@ -6,7 +6,7 @@ import Block from '../../ui/Block'
 const Todo = ({ todo, deleteTodo }) => {
   return (
       <div>
-      <hr className={style.line}></hr>
+      
       <div className={style.deleteControl}>
         <div className={style.todoText}>
           {todo.text}
@@ -15,6 +15,7 @@ const Todo = ({ todo, deleteTodo }) => {
       <button onClick={() => deleteTodo(todo.id)}>{<div className={style.symbol}><FaRegTrashAlt /></div>}</button>
       </div>
       </div>
+      <hr className={style.line}></hr>
       </div>
   );
 };

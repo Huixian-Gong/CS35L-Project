@@ -1,8 +1,22 @@
 h2 {
-    color: #888;
+    color: rgb(37, 121, 181);
     font-size: 60px;
     font-weight: 500;
     margin-bottom: 30px;
+}
+
+.txt{
+    color: rgb(40, 45, 49);
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 33px;
+}
+.txtt{
+    color: rgb(40, 45, 49);
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 33px;
+    margin-top: 13px;
 }
 
 .button[type="submit"]
@@ -38,7 +52,7 @@ h2 {
     display: inline_block;
     padding: 10px 15px;
     border-radius: 10px;
-    color: #ecd448;
+    background-color: #ecd448;
     background-size: 200%;
     background-position: 0%;
     transition: 0s;
@@ -49,7 +63,7 @@ h2 {
     font-size: 15px;
     position: sticky;
     white-space: nowrap;
-    margin-left: 20px;
+    margin-left: 33px;
     margin-bottom: 20px;
     border: none;
 }

@@ -56,7 +56,7 @@ function FindClassmate(user) {
             <form onSubmit={handleSubmit}>
             <div className={style.inner}>
               <div> &nbsp;
-                <label>&nbsp;Course Name: </label>
+                <div className={style.txtt}>&nbsp;Course Name: </div>
                   <div>
                     <input
                       className={style.input}

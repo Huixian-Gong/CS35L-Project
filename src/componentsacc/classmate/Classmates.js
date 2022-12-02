@@ -47,15 +47,15 @@ const Classmates = ({ u ,email }) => {
       <Block>
         <div>
           &nbsp;
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"Email:"}&nbsp;
-            {u.userEmail} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div className={style.txtt}>{"Email:"} &nbsp;
+            {u.userEmail}
           </div>
           &nbsp;
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lecture: &nbsp;
+          <div className={style.txt}>Lecture: &nbsp;
             {u.lecNumber} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           &nbsp;
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: &nbsp;
+          <div className={style.txt}>Name: &nbsp;
             {u.userName}
           </div>
           &nbsp;
@@ -64,7 +64,7 @@ const Classmates = ({ u ,email }) => {
           {send ? <div><textarea 
             value={message}
             onChange={(e) => setMessage(e.target.value)} 
-            className={style.textarea} placeholder={"Say hi to your new classmates!"}>
+            className={style.textarea} placeholder={"  Say hi to your new classmates!"}>
               </textarea> 
               <div>&nbsp;</div>
                 <button className={style.button} type='submit' onClick={createMessage}>

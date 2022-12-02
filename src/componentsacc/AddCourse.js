@@ -92,7 +92,7 @@ function AddCourse (user) {
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
                     <div >
-                        <label> &nbsp; Course Name: &nbsp;</label>
+                        <div className={style.txtt}> Course Name: &nbsp;</div>
                         <div>
                         <input 
                             className={style.input}
@@ -104,7 +104,7 @@ function AddCourse (user) {
                         </div>
                     </div>
                     <div >
-                        <label>&nbsp;Lecture Number: &nbsp;</label>
+                    <div className={style.txt}>Lecture Number: &nbsp;</div>
                         <div>
                         <input
                             className={style.input} 
@@ -115,7 +115,7 @@ function AddCourse (user) {
                             </div>
                     </div>
                     <div >
-                        <label>&nbsp;Your Preferred Name: &nbsp;</label>
+                    <div className={style.txt}>Your Preferred Name: &nbsp;</div>
                         <div>
                         <input
                             className={style.input}

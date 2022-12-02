@@ -8,5 +8,6 @@
     background-image: url(../ui/UCLA_SUNSET_Wilson+Plaza_2.jpg);
     background-size: cover;
     min-height: 100vh;
+    background-attachment: fixed;
     /* width: auto; */
   }

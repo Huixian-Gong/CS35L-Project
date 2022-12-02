@@ -5,7 +5,7 @@
 .line{ 
   width:500px; 
   margin: -6px; 
-  margin-top: 30px; 
+  margin-top: 20px; 
   margin-bottom: 30px; 
   border-color: #2774AE; }
 
@@ -13,6 +13,7 @@
   position: relative;
   left: 504px;
   top: -40px;
+  margin-top: 15px; 
 
 }
 .deleteControl {
@@ -29,5 +30,6 @@
   font-weight: 500;
   position: relative;
   left: -20px;
+  margin-bottom: -5px;
 }
 

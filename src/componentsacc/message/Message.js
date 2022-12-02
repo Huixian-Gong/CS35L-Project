@@ -12,6 +12,7 @@ import {
   getDocs
 } from 'firebase/firestore';
 import Chat from './Chat.js';
+import style from '../classmate/Classmates.module.css';
 
 function Message(user){
   const [messages, setMessages] = useState([]);
@@ -37,7 +38,7 @@ function Message(user){
 
     return(
       <div>
-        {messages.length == 0 ? "No Message" : messages.map((m, index) => (
+        {messages.length == 0 ? <h2> No Message</h2> : messages.map((m, index) => (
             <Chat
               key={index}
               m={m}
