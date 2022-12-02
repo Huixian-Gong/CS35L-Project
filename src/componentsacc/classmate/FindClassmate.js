@@ -21,15 +21,23 @@ function FindClassmate(user) {
   const [users,setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [CN, setCN] = useState('');
+  const [notification, setNotification] = useState(false);
 
   const handleChange = (event) => {
     setMessage(event.target.value);
+    if(message !== ""){
+      setNotification(false);
+    }
   };
 
   const handleClick = () => {
     setCN(message);
     setMessage("");
     console.log("coursename : ",CN);
+    if(users.length === 0) {
+      setNotification(true);
+    }
+
   };
 
   if(CN != ""){
@@ -46,6 +54,7 @@ function FindClassmate(user) {
   function handleSubmit(e){
     e.preventDefault();
     Navigate("/findclassmate");
+    
   }
   return (
     <div>
@@ -53,6 +62,11 @@ function FindClassmate(user) {
           <h2 className={style.h2}>Find Classmate</h2>
           </div>
           <Block>
+          {notification ?  (<div className={style.error}>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                { "No classmate found!"}</div>) : ""}
             <form onSubmit={handleSubmit}>
             <div className={style.inner}>
               <div> &nbsp;

@@ -40,7 +40,7 @@ function Message(user){
       <div>
         {messages.length == 0 ? <h2> No Message</h2> : 
 
-<h2> Your Message</h2>
+          <h2> Your Message</h2>
         }
         {messages.length == 0 ? null : 
 

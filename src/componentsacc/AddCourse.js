@@ -87,6 +87,7 @@ function AddCourse (user) {
         <Block>
             {notification ?  (<div className={style.error}>
                 <div>&nbsp;</div>
+                <div>&nbsp;</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 { "Course Added Successfully!"}</div>) : ""}
             <form onSubmit={createCourse}>

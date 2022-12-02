@@ -14,7 +14,7 @@ import {
   where,
   getDocs
 } from 'firebase/firestore';
-import style from '../../ui/Block1.module.css'
+import style from './Account.module.css'
 
 
 function Account(user){
@@ -44,9 +44,11 @@ function Account(user){
   return (
 
     <div >
-      <div>&nbsp;</div>
-      <label className={style.h2}> Your Study List </label>
-      <div>&nbsp;</div>
+
+      {users.length == 0 ? <h2> No Class Added</h2> : 
+          <h2> Your Study List</h2>
+        }
+  
       {users.map((c, index) => (
               <Classes
                 key={index}
