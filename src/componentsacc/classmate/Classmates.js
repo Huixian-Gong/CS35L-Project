@@ -64,7 +64,7 @@ const Classmates = ({ u ,email }) => {
           {send ? <div><textarea 
             value={message}
             onChange={(e) => setMessage(e.target.value)} 
-            className={style.textarea} placeholder={"  Say hi to your new classmates!"}>
+            className={style.textarea} placeholder={"Say hi to your new classmates!"}>
               </textarea> 
               <div>&nbsp;</div>
                 <button className={style.button} type='submit' onClick={createMessage}>

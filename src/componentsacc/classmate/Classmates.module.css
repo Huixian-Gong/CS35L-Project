@@ -121,4 +121,6 @@ h2 {
     width: 60%;
     background-color: #ececec;
     height: 100px;
+    padding-top: 0.5rem;
+    padding-left: 0.75rem;
 }

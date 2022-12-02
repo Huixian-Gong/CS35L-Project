@@ -48,7 +48,7 @@ const Chat = ({ m , deleteMessage}) => {
     return (
       <div>
             <div>
-                <h2>Your Messages:</h2>
+                {/* <h2>Your Messages:</h2> */}
                 <Block>
                 &nbsp;
                 <div className={style.label}>
@@ -69,7 +69,7 @@ const Chat = ({ m , deleteMessage}) => {
                 
                 {/* &nbsp; */}
                 <div>
-                {reply ? <textarea className={style.textarea} placeholder={" Your reply message ... "} onChange={(e) => setMessage(e.target.value)}></textarea> : ""}   
+                {reply ? <textarea className={style.textarea} placeholder={"Your reply message ... "} onChange={(e) => setMessage(e.target.value)}></textarea> : ""}   
                 </div>
                     <button 
                         className={style.bbutton}
@@ -85,6 +85,9 @@ const Chat = ({ m , deleteMessage}) => {
                     </button>  
                 <div>&nbsp;</div>
             </Block>
+
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
             </div>
       </div>
     );
