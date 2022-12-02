@@ -1,27 +1,60 @@
 .card {
-    background-color: rgb(244, 244, 244);
-    border-radius: 10px;
-    box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-  }
+  background-color: rgb(244, 244, 244);
+  border-radius: 10px;
+  box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
 
 
 .n {
-  color: #639dc9;
-  font-size: 25px;
-  font-weight: 500;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: inline;
+color: #639dc9;
+font-size: 25px;
+font-weight: 500;
+padding-left: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+display: inline;
 }
 
 .c {
-  color: #505355;
-  font-size: 20px;
-  font-weight: 500;
-  padding-left: 110px;
-  /* padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px; */
+color: #505355;
+font-size: 20px;
+font-weight: 500;
+padding-left: 110px;
+/* padding-left: 20px;
+padding-top: 10px;
+padding-bottom: 10px; */
+}
+
+.n button[type="submit"],
+.n input[type="submit"],
+.welcome button {
+ outline: none;
+ display: center;
+ padding: 10px 15px;
+ border-radius: 10px;
+ background-color: #EED859;
+ border : none;
+ background-size: 200%;
+ background-position: 0%;
+ transition: 0s;
+ color: rgb(255, 255, 255);
+ font-weight: 700;
+ cursor: pointer;
+}
+
+
+.n button[type="submit"]:hover {
+ background-position: 100% 0%;
+ background-color: rgb(72, 153, 214);
+}
+
+.h2 {
+color: rgb(37, 121, 181);
+font-size: 60px;
+font-weight: 500;
+/* padding-top: 30px; */
+padding-left: 2%;
+margin-top: 10%;
+margin-bottom: 2%;
 }

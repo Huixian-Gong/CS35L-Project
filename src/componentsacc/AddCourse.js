@@ -14,18 +14,41 @@ import {
 } from 'firebase/firestore';
 import Block from '../ui/Block'
 
+
+
 function AddCourse (user) {
     console.log(user.user);
     const [Course, setCourse] = useState([]);
     const [inputCN, setInputCN] = useState('');
     const [inputUN, setInputUN] = useState('');
     const [inputLN, setInputLN] = useState('');
-
+    const [notification, setNotification] = useState(false);
+    function handleInputCN (e) {
+        e.preventDefault();
+        if (e.target.value !=''){
+            setNotification(false);
+            setInputCN(e.target.value);
+        }
+    }
+    function handleInputLN (e) {
+        e.preventDefault();
+        if (e.target.value !=''){
+            setNotification(false);
+            setInputLN(e.target.value);
+        }
+    }
+    function handleInputUN (e) {
+        e.preventDefault();
+        if (e.target.value !=''){
+            setNotification(false);
+            setInputUN(e.target.value);
+        }
+    }
     const createCourse = async (e) => {
         e.preventDefault(e);
         if (inputCN === '') {
-          alert('Course Name cannot be empty');
-          return;
+            alert('Course Name cannot be empty');
+            return;
         }
         if (inputLN === '') {
             alert('Lecture number cannot be empty');
@@ -34,7 +57,7 @@ function AddCourse (user) {
         if (inputUN === '') {
             alert('Your name cannot be empty');
             return;
-        }  
+        }
         await addDoc(collection(db, inputCN), {
           courseName: inputCN,
           lecNumber: inputLN,
@@ -56,38 +79,47 @@ function AddCourse (user) {
         setInputCN('');
         setInputLN('');
         setInputUN('');
+        setNotification(true);
       };
     return (
     <div>
     <div className={style.h2}>Add a Course</div>
         <Block>
-        
+            {notification ?  "Course Added Successfully!" : ""}
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
-                    <div className={style.group}>
-                        <label></label>
+                    <div >
+                        <label> &nbsp; Course Name: &nbsp;</label>
+                        <div>
                         <input 
                             className={style.input}
-                            placeholder='Course Name'
+                            placeholder='Example: CS 35L'
                             value={inputCN}
-                            onChange={(e) => setInputCN(e.target.value)}>
+                            onChange={handleInputCN}>
                         </input>
+                        <div>&nbsp;</div>
+                        </div>
                     </div>
-                    <div className={style.group}>
-                        <label></label>
+                    <div >
+                        <label>&nbsp;Lecture Number: &nbsp;</label>
+                        <div>
                         <input
                             className={style.input} 
-                            placeholder='Lecture Number' 
+                            placeholder='Example: 1C' 
                             value={inputLN}
-                            onChange={(e) => setInputLN(e.target.value)}/>
+                            onChange={handleInputLN}/>
+                            <div>&nbsp;</div>
+                            </div>
                     </div>
-                    <div className={style.group}>
-                        <label></label>
+                    <div >
+                        <label>&nbsp;Your Preferred Name: &nbsp;</label>
+                        <div>
                         <input
                             className={style.input}
-                            placeholder='Your Preferred Name'
+                            placeholder='Example: Joe Bruin'
                             value={inputUN}
-                            onChange={(e) => setInputUN(e.target.value)}/>
+                            onChange={handleInputUN}/>
+                            </div>
                     </div>
                     <div> &nbsp;</div>
                     <button type="submit"> Submit </button>

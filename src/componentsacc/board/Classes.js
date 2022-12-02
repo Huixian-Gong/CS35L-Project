@@ -7,6 +7,7 @@ const Classes = ({ c, deleteClass}) => {
     
     return (
       <div>
+        {/* <h2 className={style.h2}>Your Study List</h2> */}
         <Block> 
             <div className={style.n} >
                 Course Name: &nbsp;
