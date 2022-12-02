@@ -46,39 +46,49 @@ const Classmates = ({ u ,email }) => {
     <div>
       <Block>
         <div>
-          <div>Email:&nbsp;
+          &nbsp;
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"Email:"}&nbsp;
             {u.userEmail} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-          <div>Lecture: &nbsp;
+          &nbsp;
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lecture: &nbsp;
             {u.lecNumber} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-          <div>Name: &nbsp;
+          &nbsp;
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: &nbsp;
             {u.userName}
           </div>
-          
+          &nbsp;
         </div>
-        &nbsp;
         <div>
           {send ? <div><textarea 
             value={message}
             onChange={(e) => setMessage(e.target.value)} 
-            className={style.textarea}>
+            className={style.textarea} placeholder={"Say hi to your new classmates!"}>
               </textarea> 
               <div>&nbsp;</div>
                 <button className={style.button} type='submit' onClick={createMessage}>
                   Send&nbsp;
                 </button>
+                <button 
+                  className={style.scbutton}
+                  type='submit'
+                  onClick={handleClick}>
+                  {send ? "Close" : ""}
+                </button>
               </div>
-            : ""
+            : <button 
+                className={style.sdbutton}
+                type='submit'
+                onClick={handleClick}>
+                {/* {send ? "" : "Send Message"} */}
+                Send Message
+              </button>
           }
+        
+        
+        
         </div>
-        <div>&nbsp;</div>
-        <button 
-          className={style.button}
-          type='submit'
-          onClick={handleClick}>
-          {send ? "Close" : "Send Message"}
-        </button>
       </Block>
       &nbsp;
     </div>
