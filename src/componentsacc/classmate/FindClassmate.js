@@ -15,33 +15,34 @@ import {
 import style from './FindClassmate.module.css'
 import { Navigate } from 'react-router-dom';
 import Block from '../../ui/Block'
+import { async } from '@firebase/util';
 
 function FindClassmate(user) {
   const email = user.user
   const [users,setUsers] = useState([]);
   const [message, setMessage] = useState('');
   const [CN, setCN] = useState('');
-  const [notification, setNotification] = useState(false);
+  const [notification, setNotification] = useState(true);
 
   const handleChange = (event) => {
+    console.log("handlechange : ");
+    event.preventDefault();
     setMessage(event.target.value);
-    if(message !== ""){
-      setNotification(false);
-    }
+
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    console.log("handleclick : ");
+    e.preventDefault();
     setCN(message);
     setMessage("");
     console.log("coursename : ",CN);
-    if(users.length === 0) {
-      setNotification(true);
-    }
-
+    console.log("users show= ", users);
+    setNotification(false);
   };
 
   if(CN != ""){
-    console.log("user.email : ",user.user)
+    // console.log("user.email : ",user.user)
     const q = query(collection(db,CN),where("userEmail","!=", user.user));
     const getUsers = async () => {
       const data = await getDocs(q);
@@ -49,25 +50,22 @@ function FindClassmate(user) {
     }
     getUsers();
     setCN("");
-    console.log(users);
+    // console.log(users);
   }
-  function handleSubmit(e){
-    e.preventDefault();
-    Navigate("/findclassmate");
-    
-  }
+  
   return (
     <div>
         <div>
           <h2 className={style.h2}>Find Classmate</h2>
           </div>
           <Block>
-          {notification ?  (<div className={style.error}>
+          {console.log(users.length)}
+          {users.length !== 0 || notification ?  "" : (<div className={style.error}>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                { "No classmate found!"}</div>) : ""}
-            <form onSubmit={handleSubmit}>
+                { "No classmate found!"}</div>) }
+            <form>
             <div className={style.inner}>
               <div> &nbsp;
                 <div className={style.txtt}>&nbsp;Course Name: </div>
@@ -81,10 +79,12 @@ function FindClassmate(user) {
                     />
                   </div>
                   <div> &nbsp;</div>
-                  <button className={style.button} type="submit" onClick={handleClick}>Search</button>  
+                  <button className={style.button} 
+                  type="submit" 
+                  onClick={handleClick}>Search</button>  
                   {/* <div> &nbsp;</div> */}
                   </div>
-            </div>
+              </div>
             </form>
           </Block>
           &nbsp;
@@ -101,3 +101,12 @@ function FindClassmate(user) {
 
 export default FindClassmate;
  
+
+// const handleSubmit = (e) => {
+//   console.log("handlesubmit : ");
+//   // e.preventDefault();
+//   // Navigate("/findclassmate");
+//   console.log("handleSubmit users: ", users);
+//   console.log("handleSubmit users.length: ", users.length);
+  
+// }

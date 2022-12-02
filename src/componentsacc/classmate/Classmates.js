@@ -15,12 +15,12 @@ import {
 
 
 const Classmates = ({ u ,email }) => {
-  console.log("user: ",email);
+  // console.log("user: ",email);
   const [send, setSend] = useState(false);
   const [message, setMessage] = useState('');
 
-  console.log("user: ",email);
-  console.log("email: ", );
+  // console.log("user: ",email);
+  // console.log("email: ", );
   const createMessage = async (e) => {
     e.preventDefault(e);
     console.log("message:",message)
