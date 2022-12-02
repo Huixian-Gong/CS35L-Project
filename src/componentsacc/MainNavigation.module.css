@@ -13,10 +13,11 @@
   font-size: 0rem;
   color: white;
   font-weight: bold;
-  left: 0;
+  /* left: 0; */
   display: flex;
   white-space: nowrap;
   position: sticky;
+  margin-left: -100px;
 }
 
 .wrapper {
