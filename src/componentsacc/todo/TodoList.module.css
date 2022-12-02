@@ -2,9 +2,10 @@
     padding: 1rem;
   }
   
-.control {
+/* .control {
     margin: 1rem;
-}
+    width: 500px;
+} */
   
 .submit {
   position: relative;
@@ -12,10 +13,12 @@
   width: 50%;
 }
 
-.control label {
+.control input {
+  margin: 1rem;
+  width: 500px;
     display: block;
-    font-weight: bold;
     margin-bottom: 0.5rem;
+  
 }
 
 .textarea {
@@ -31,7 +34,8 @@
   
   .actions {
     margin-top: 1rem;
-    text-align: right;
+    text-align: left;
+
   }
   
   button {
@@ -43,6 +47,7 @@
     border: 1px solid rgb(238, 216, 89);
     border-radius: 4px;
     font-weight: bold;
+
   }
   
 button:hover,
@@ -61,3 +66,17 @@ button:hover,
 .symbol {
   color:#fff;
 }
+
+.addButton{
+  outline: none;
+  display: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #EED859;
+  border : none;
+  transition: 0s;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 560px;
+  top: 20px
+} 

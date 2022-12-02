@@ -11,7 +11,7 @@ h2 {
     display: inline_block;
     padding: 10px 15px;
     border-radius: 10px;
-    color: #EED859;
+    background-color: rgb(72, 153, 214) ;
     background-size: 200%;
     background-position: 0%;
     transition: 0s;
@@ -20,8 +20,71 @@ h2 {
     cursor: pointer;
     position: center;
     font-size: 15px;
+    position: sticky;
+    white-space: nowrap;
+    margin-left: 20px;
+    border : none;
 }
 
+    .button[type="submit"]:hover {
+        background-position: 100% 0%;
+        background-color: rgb(21, 115, 182);
+    }
+
+
+.sdbutton[type="submit"]
+{
+    outline: none;
+    display: inline_block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #ecd448;
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0s;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    position: center;
+    font-size: 15px;
+    position: sticky;
+    white-space: nowrap;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.sdbutton[type="submit"]:hover {
+    background-position: 100% 0%;
+    background-color:  rgb(72, 153, 214);
+}
+
+.scbutton[type="submit"]
+{
+    outline: none;
+    display: inline_block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #ecd448;
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0s;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    position: center;
+    font-size: 15px;
+    position: sticky;
+    white-space: nowrap;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.scbutton[type="submit"]:hover {
+    background-position: 100% 0%;
+    background-color:  #dfc843;
+}
 
 .input {
     outline: none;
@@ -38,8 +101,10 @@ h2 {
     display: block;
     font: inherit;
     border-radius: 10px;
-    padding: 0.25rem;
+    margin-left: 20px;
+    margin-top: 20px;
+    /* padding: 0.25rem; */
     width: 60%;
     background-color: #ececec;
-    height: 150px;
+    height: 100px;
 }

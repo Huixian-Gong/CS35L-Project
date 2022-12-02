@@ -66,10 +66,13 @@ function TodoList(user) {
                         type='text'
                         placeholder='Add Todo'
                     />
+                    <div className={style.addButton}>
                       <button className={style.actions}>
                         <div className={style.symbol}><AiOutlinePlus/></div>
                       </button>  
+                    </div>
                 </div>
+                
 
             </form>
         <ul>
