@@ -3,3 +3,10 @@
     width: 100%;
     max-width: 40rem;
 }
+
+.img {
+    background-image: url(../ui/UCLA_SUNSET_Wilson+Plaza_2.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    /* width: auto; */
+  }
