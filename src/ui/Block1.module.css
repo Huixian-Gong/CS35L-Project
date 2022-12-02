@@ -1,5 +1,5 @@
 .card {
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(244, 244, 244,0.8);
   border-radius: 10px;
   box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -14,6 +14,7 @@ padding-left: 20px;
 padding-top: 10px;
 padding-bottom: 10px;
 display: inline;
+position: relative;
 }
 
 .c {
@@ -40,14 +41,28 @@ padding-bottom: 10px; */
  transition: 0s;
  color: rgb(255, 255, 255);
  font-weight: 700;
+ font-size: 1.1rem;
  cursor: pointer;
+ position: absolute;
+ left: 540px;
+ top: 15px
 }
 
+box{
+  position: relative;
+}
 
+.n button[type="submit"]:hover {
+  background-position: 100% 0%;
+  background-color: rgb(72, 153, 214);
+
+}
+
+/* 
 .n button[type="submit"]:hover {
  background-position: 100% 0%;
  background-color: rgb(72, 153, 214);
-}
+} */
 
 .h2 {
 color: rgb(37, 121, 181);

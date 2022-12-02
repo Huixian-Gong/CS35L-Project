@@ -46,12 +46,16 @@ const Classmates = ({ u ,email }) => {
     <div>
       <Block>
         <div>
-          Email:&nbsp;
-          {u.userEmail} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Lecture: &nbsp;
-          {u.lecNumber} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Name: &nbsp;
-          {u.userName}
+          <div>Email:&nbsp;
+            {u.userEmail} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div>Lecture: &nbsp;
+            {u.lecNumber} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div>Name: &nbsp;
+            {u.userName}
+          </div>
+          
         </div>
         &nbsp;
         <div>
@@ -61,7 +65,9 @@ const Classmates = ({ u ,email }) => {
             className={style.textarea}>
               </textarea> 
               <div>&nbsp;</div>
-              <button className={style.button} type='submit' onClick={createMessage}>Send&nbsp;</button>
+                <button className={style.button} type='submit' onClick={createMessage}>
+                  Send&nbsp;
+                </button>
               </div>
             : ""
           }

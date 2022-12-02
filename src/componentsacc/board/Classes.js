@@ -7,13 +7,15 @@ const Classes = ({ c, deleteClass}) => {
     
     return (
       <div>
-        {/* <h2 className={style.h2}>Your Study List</h2> */}
         <Block> 
             <div className={style.n} >
                 Course Name: &nbsp;
-                  <div className={style.c}>  {c.courseName} </div>
+                <div className={style.c}>  {c.courseName} 
+                <button className={style.button} type='submit' onClick={(e) => deleteClass(c.id)}>
+                  Delete
+                  </button>
+                </div>
             </div>
-            <button onClick={(e) => deleteClass(c.id)}>Delete</button>
         </Block>
         <div>&nbsp;</div>
       </div>

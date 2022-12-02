@@ -27,22 +27,22 @@ function AddCourse (user) {
         e.preventDefault();
         if (e.target.value !=''){
             setNotification(false);
-            setInputCN(e.target.value);
         }
+        setInputCN(e.target.value);
     }
     function handleInputLN (e) {
         e.preventDefault();
         if (e.target.value !=''){
             setNotification(false);
-            setInputLN(e.target.value);
         }
+        setInputLN(e.target.value);
     }
     function handleInputUN (e) {
         e.preventDefault();
         if (e.target.value !=''){
             setNotification(false);
-            setInputUN(e.target.value);
         }
+        setInputUN(e.target.value);
     }
     const createCourse = async (e) => {
         e.preventDefault(e);
@@ -85,7 +85,10 @@ function AddCourse (user) {
     <div>
     <div className={style.h2}>Add a Course</div>
         <Block>
-            {notification ?  "Course Added Successfully!" : ""}
+            {notification ?  (<div className={style.error}>
+                <div>&nbsp;</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                { "Course Added Successfully!"}</div>) : ""}
             <form onSubmit={createCourse}>
                 <div className={style.inner}>
                     <div >

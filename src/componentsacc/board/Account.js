@@ -14,6 +14,7 @@ import {
   where,
   getDocs
 } from 'firebase/firestore';
+import style from '../../ui/Block1.module.css'
 
 
 function Account(user){
@@ -41,10 +42,11 @@ function Account(user){
   };
 
   return (
-    
-    
-    <div>
-      Study List
+
+    <div >
+      <div>&nbsp;</div>
+      <label className={style.h2}> Your Study List </label>
+      <div>&nbsp;</div>
       {users.map((c, index) => (
               <Classes
                 key={index}
