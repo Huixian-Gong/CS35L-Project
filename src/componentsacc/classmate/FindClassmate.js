@@ -38,7 +38,7 @@ function FindClassmate(user) {
     setMessage("");
     console.log("coursename : ",CN);
     console.log("users show= ", users);
-    setNotification(false);
+    // setNotification(false);
   };
 
   if(CN != ""){
@@ -47,10 +47,13 @@ function FindClassmate(user) {
     const getUsers = async () => {
       const data = await getDocs(q);
       setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id })));
+      {data.docs.map((doc) => ({...doc.data(), id: doc.id })).length != 0 ? setNotification(true):setNotification(false)}
+      console.log("consolelog users=",data.docs.map((doc) => ({...doc.data(), id: doc.id })));
     }
+
     getUsers();
     setCN("");
-    // console.log(users);
+    // console.log("consolelog users=",users);
   }
   
   return (
@@ -60,11 +63,13 @@ function FindClassmate(user) {
           </div>
           <Block>
           {console.log(users.length)}
-          {users.length !== 0 || notification ?  "" : (<div className={style.error}>
+          { notification ?  "" : 
+          (<div className={style.error}>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                { "No classmate found!"}</div>) }
+                { "No classmate found!"}</div>) 
+                }
             <form>
             <div className={style.inner}>
               <div> &nbsp;
