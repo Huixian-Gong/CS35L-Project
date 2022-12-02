@@ -16,8 +16,9 @@
 .control input {
   margin: 1rem;
   width: 500px;
-    display: block;
-    margin-bottom: 0.5rem;
+  height: 40px;
+  display: block;
+ margin-bottom: 0.5rem;
   
 }
 
@@ -43,7 +44,7 @@
     cursor: pointer;
     background-color: rgb(238, 216, 89);
     color: #2774AE;
-    padding: 0.3rem 1rem;
+    padding: 0.85rem 1rem;
     border: 1px solid rgb(238, 216, 89);
     border-radius: 4px;
     font-weight: bold;
@@ -68,15 +69,26 @@ button:hover,
 }
 
 .addButton{
-  outline: none;
-  display: center;
-  padding: 10px 15px;
-  border-radius: 10px;
-  background-color: #EED859;
-  border : none;
-  transition: 0s;
-  color: rgb(255, 255, 255);
   position: absolute;
   left: 560px;
-  top: 20px
+  top: 16px
 } 
+
+.todoCount{
+  color: #c85a1a;
+  font-size: 23px;
+  font-weight: 500;
+  position: relative;
+  left: 225px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  color: rgb(37, 121, 181);
+  font-size: 60px;
+  font-weight: 500;
+  /* padding-top: 30px; */
+  padding-left: 2%;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}

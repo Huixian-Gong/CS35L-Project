@@ -85,7 +85,7 @@ function TodoList(user) {
           ))}
         </ul>
         {todos.length < 1 ? null : (
-          <p className={style.count}>{`You have ${todos.length} todos`}</p>
+          <div className={style.todoCount}>{`You have ${todos.length} todos`}</div>
         )}
         </Block>
       </div>

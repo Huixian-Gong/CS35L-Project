@@ -1,3 +1,33 @@
 .symbol {
     color:#fff;
   }
+
+.line{ 
+  width:500px; 
+  margin: -6px; 
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+  border-color: #2774AE; }
+
+.deleteBlock{
+  position: relative;
+  left: 504px;
+  top: -40px;
+
+}
+.deleteControl {
+  margin: 1rem;
+  width: 500px;
+  height: 40px;
+  display: block;
+ margin-bottom: 0.5rem;
+}
+
+.todoText{
+  color: #01080d;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  left: -20px;
+}
+
